@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Agendamento\QueryResults\" />
-    <Folder Include="Agendamento\QueryHandlers\" />
-    <Folder Include="Agendamento\Queries\" />
+    <Folder Include="AgendamentoContext\QueryResults\" />
+    <Folder Include="AgendamentoContext\QueryHandlers\" />
+    <Folder Include="AgendamentoContext\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

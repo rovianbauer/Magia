@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 
-namespace Magia.Infra.DataAccess.Entity.Mappings
+namespace Magia.Infra.DataAccess.Entity.AgendamentoContext.Mappings
 {
     public class SalaMap
         : IEntityTypeConfiguration<SalaEntity>

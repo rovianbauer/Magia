@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Magia.Infra.DataAccess.Entity.Mappings
+namespace Magia.Infra.DataAccess.Entity.AgendamentoContext.Mappings
 {
     public class AgendamentoMap
         : IEntityTypeConfiguration<AgendamentoEntity>

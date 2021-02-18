@@ -1,13 +1,13 @@
 ﻿using Flunt.Notifications;
 using Magia.Domain.AgendamentoContext.Entities;
-using Magia.Infra.DataAccess.Entity.Mappings;
+using Magia.Infra.DataAccess.Entity.AgendamentoContext.Mappings;
 using Microsoft.EntityFrameworkCore;
 
-namespace Magia.Infra.DataAccess.Entity.DbContext
+namespace Magia.Infra.DataAccess.Entity.AgendamentoContext
 {
-    public class AgendamentoDbContext
+    public class AgendamentoDbContext : DbContext
     {
-        public AgendamentoDbContext()
+        public AgendamentoDbContext(DbContextOptions<AgendamentoDbContext> options) : base(options)
         {
         }
 
