@@ -1,4 +1,5 @@
 ﻿using Magia.Application.AgendamentoContext.Commands;
+using Magia.Application.AgendamentoContext.Queries;
 using Magia.Domain.Core.Notification;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -15,12 +16,16 @@ namespace Magia.WebAPI.Controllers
         {
         }
 
-        [HttpPost("")]
-        public async Task<IActionResult> CadastrarCliente(NovaSalaCommand command)
+        [HttpPost]
+        public async Task<IActionResult> CadastrarSala(NovaSalaCommand command)
         {
             return CustomResponse(await Mediator.Send(command));
         }
 
-
+        [HttpGet]
+        public async Task<IActionResult> ObterSalas()
+        {
+            return CustomResponse(await Mediator.Send(new ObterSalasQuery()));
+        }
     }
 }

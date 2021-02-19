@@ -34,6 +34,9 @@ namespace Magia.WebAPI
             services.AddMediatR(typeof(BaseCommand));
             services.AddMediatR(typeof(NovoAgendamentoCommand));
 
+            // AutoMapper Settings
+            services.AddAutoMapperConfiguration();
+
             // Entity Framework
             services.AddDbContext<AgendamentoDbContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("default")));
