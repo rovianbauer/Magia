@@ -31,6 +31,8 @@ namespace Magia.Domain.Core.Entities
 
         public abstract void Validar();
 
+        public abstract bool IsValid();
+
         public override bool Equals(object obj)
         {
             var compareTo = obj as BaseEntity<TKey>;

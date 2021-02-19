@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Magia.Domain.Core\Magia.Domain.Core.csproj" />
+    <ProjectReference Include="..\Magia.Domain\Magia.Domain.csproj" />
   </ItemGroup>
 
 </Project>

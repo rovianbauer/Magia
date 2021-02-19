@@ -7,6 +7,20 @@ namespace Magia.Domain.AgendamentoContext.Entities
 {
     public class AgendamentoEntity : BaseEntity<Guid>
     {
+        protected AgendamentoEntity() { }
+
+        public AgendamentoEntity(SalaEntity sala,
+            string titulo,
+            DateTime dataHoraInicio,
+            DateTime dataHoraFim)
+        {
+            Id = Guid.NewGuid();
+            Sala = sala;
+            Titulo = titulo;
+            DataHoraInicio = dataHoraInicio;
+            DataHoraFim = dataHoraFim;
+        }
+
         public SalaEntity Sala { get; set; }
         public string Titulo { get; set; }
         public DateTime DataHoraInicio { get; set; }
@@ -28,6 +42,12 @@ namespace Magia.Domain.AgendamentoContext.Entities
                .IsFalse(DataHoraFim == null, "DataHoraFim", "Data hora fim é obrigatória")
                .IsGreaterOrEqualsThan(DataHoraFim, DateTime.MinValue, "DataHoraFim", $"Data hora fim é obrigatória")
                .IsGreaterThan(DataHoraFim, DataHoraInicio, "DataHoraFim", $"Data hora fim deve ser maior que a data hora inicio"));
+        }
+
+        public override bool IsValid()
+        {
+            Validar();
+            return Valid;
         }
     }
 }

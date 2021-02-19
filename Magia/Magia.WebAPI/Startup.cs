@@ -2,6 +2,7 @@
 using Magia.Domain.Core.Commands;
 using Magia.Infra.DataAccess.Entity.AgendamentoContext;
 using Magia.WebAPI.Configuration;
+using Magia.WebAPI.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,13 @@ namespace Magia.WebAPI
             // Entity Framework
             services.AddDbContext<AgendamentoDbContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("default")));
+
+            // Controllers
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(TransactionalActionFilter));
+                options.Filters.Add(typeof(ModelStateValidationFilter));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
