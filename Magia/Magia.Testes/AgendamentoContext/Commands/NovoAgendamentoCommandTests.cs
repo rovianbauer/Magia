@@ -24,7 +24,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         public void ValidaCommandValido()
         {
             _command.Validate();
-            Assert.AreEqual(true, _command.Valid);
+            Assert.AreEqual(true, _command.IsValid());
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command = new NovoAgendamentoCommand();
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.SalaId = Guid.Empty;
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.Titulo = string.Empty;
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.DataHoraInicio = _command.DataHoraFim.AddMinutes(1);
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.DataHoraFim = DateTime.Now.AddSeconds(-1);
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.DataHoraInicio = DateTime.Now.AddSeconds(-1);
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
             _command.DataHoraInicio = dataHora;
             _command.DataHoraFim = dataHora;
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.DataHoraInicio = DateTime.MinValue;
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
         {
             _command.DataHoraFim = DateTime.MinValue;
             _command.Validate();
-            Assert.AreEqual(false, _command.Valid);
+            Assert.AreEqual(false, _command.IsValid());
         }
     }
 }

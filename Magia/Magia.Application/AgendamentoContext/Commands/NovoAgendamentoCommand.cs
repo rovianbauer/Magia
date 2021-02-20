@@ -16,7 +16,7 @@ namespace Magia.Application.AgendamentoContext.Commands
 
         public override bool IsValid()
         {
-            return IsValid();
+            return Valid;
         }
 
         public override void Validate()

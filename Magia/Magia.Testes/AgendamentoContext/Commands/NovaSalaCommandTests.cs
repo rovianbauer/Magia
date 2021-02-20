@@ -16,7 +16,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
 
             command.Validate();
 
-            Assert.AreEqual(true, command.Valid);
+            Assert.AreEqual(true, command.IsValid());
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace Magia.Testes.AgendamentoContext.Commands
 
             command.Validate();
 
-            Assert.AreEqual(true, command.Invalid);
+            Assert.AreEqual(false, command.IsValid());
         }
     }
 }
