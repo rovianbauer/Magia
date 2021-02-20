@@ -1,4 +1,4 @@
-﻿using Magia.Application.Agendamento.Commands;
+﻿using Magia.Application.AgendamentoContext.Commands;
 using Magia.Domain.Core.Commands;
 using Magia.Infra.DataAccess.Entity.AgendamentoContext;
 using Magia.WebAPI.Configuration;

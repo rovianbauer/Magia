@@ -1,4 +1,4 @@
-﻿using Magia.Application.Agendamento.Commands;
+﻿using Magia.Application.AgendamentoContext.Commands;
 using Magia.Domain.AgendamentoContext.Entities;
 using Magia.Domain.AgendamentoContext.Interfaces;
 using Magia.Domain.Core.Commands;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Magia.Application.Agendamento.CommandHandlers
+namespace Magia.Application.AgendamentoContext.CommandHandlers
 {
     public class NovoAgendamentoCommandHandler :
         BaseCommandHandler, IRequestHandler<NovoAgendamentoCommand, bool>

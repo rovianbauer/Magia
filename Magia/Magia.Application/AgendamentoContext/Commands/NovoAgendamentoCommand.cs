@@ -4,7 +4,7 @@ using MediatR;
 using System;
 using System.Globalization;
 
-namespace Magia.Application.Agendamento.Commands
+namespace Magia.Application.AgendamentoContext.Commands
 {
     public class NovoAgendamentoCommand :
         BaseCommand, IRequest<bool>

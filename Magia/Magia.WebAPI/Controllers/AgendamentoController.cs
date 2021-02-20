@@ -1,4 +1,4 @@
-﻿using Magia.Application.Agendamento.Commands;
+﻿using Magia.Application.AgendamentoContext.Commands;
 using Magia.Domain.Core.Notification;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

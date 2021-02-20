@@ -8,5 +8,7 @@ namespace Magia.Domain.Core.Commands
     {
         public abstract bool IsValid();
         public abstract void Validate();
+
+
     }
 }
