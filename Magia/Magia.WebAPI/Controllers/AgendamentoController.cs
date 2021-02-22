@@ -14,8 +14,11 @@ namespace Magia.WebAPI.Controllers
             IMediator mediator) : base(notification, mediator)
         { }
 
+        /// <summary>
+        /// Utilizar para cadastrar um novo Agendamento
+        /// </summary> 
         [HttpPost("")]
-        public async Task<IActionResult> CadastrarCliente(NovoAgendamentoCommand command)
+        public async Task<IActionResult> NovoAgendamento(NovoAgendamentoCommand command)
         {
             return CustomResponse(await Mediator.Send(command));
         }

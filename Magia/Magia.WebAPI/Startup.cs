@@ -24,6 +24,9 @@ namespace Magia.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // Swagger Config
+            services.AddSwaggerConfiguration();
+
             services.AddControllers();
 
             // IoC
@@ -59,6 +62,8 @@ namespace Magia.WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwaggerSetup();
 
             app.UseEndpoints(endpoints =>
             {
