@@ -11,7 +11,8 @@ Endpoints disponíveis
 
 
 * [POST] /salas (Deve ser utilizado para cadastro de uma nova sala de reunião)
-* Exemplo body
+
+Exemplo body
 {
   "descricao": "Sala de reunião 1"
 }
@@ -19,7 +20,8 @@ Endpoints disponíveis
 * [GET] /salas (Retorna a lista com todas as salas de reuniões)
 
 * [POST] /agendamentos (Cadastrar uma nova reunião para uma sala, o parametro SalaId deve ser obtido atravez do endpoint [GET] /salas)
-* Exemplo body
+
+Exemplo body
 {
 	"salaId" : "727cc132-204f-47fe-a6f6-e43adc0fbc8a",
   "titulo": "Reunião diretores",
